@@ -1,0 +1,86 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<h1>Hello World!</h1>
+<br>
+<section class="contact">
+    <div class="container">
+        
+        <div class="row">
+        
+            <div class="col-sm-12 col-md-4">
+                <div class="contact-information">
+                    <h5>Address</h5>
+                    <p>6600 Steiner Drive, Sacramento, CA 95823 USA</p>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+           
+                <div class="col-lg-12">
+                    <div class="google-maps mb-100" id="mapsDiv">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3122.1533345977027!2d-121.44733478477431!3d38.50717437745609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac55f79199453%3A0xd8007a070f19d67d!2sAllegheny%20Wesleyan%20Methodist%20Church!5e0!3m2!1sen!2sus!4v1674229994069!5m2!1sen!2sus" referrerpolicy="no-referrer-when-downgrade" id="maps"></iframe>
+                    </div>
+                </div>
+        </div>
+        <br>
+        <div class="row">
+                <div class="col-lg-12">
+                    <div id="serviceTimes">
+                        <h4>Service Times</h4>
+                        <ul id="services">
+                            <li>
+                                Sunday
+                            </li>
+                                <ul>
+                                    <li>
+                                        10:15 am - Sunday School
+                                    </li>
+                                    <li>
+                                        11:00 am - Morning Worship
+                                    </li>
+                                    <li>
+                                        5:00 pm - People's Service
+                                    </li>
+                                        <ul>
+                                            <li>
+                                                This is a time for congregational singing and testimonies.
+                                            </li>
+                                        </ul>
+                                    <li>
+                                        6:00 pm - Evening Worship
+                                    </li>
+                                </ul>
+                            <li>
+                                Wednesday
+                            </li>
+                                <ul>
+                                    <li>
+                                        7:00 pm - Midweek Prayer Service
+                                    </li>
+                                </ul>
+                        </ul>                    
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</section>
+
+        
+        
+   
+
+
+
+
+
+
+{% endblock %}
