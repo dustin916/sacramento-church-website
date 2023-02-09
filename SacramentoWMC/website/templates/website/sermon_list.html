@@ -1,0 +1,66 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Sermons{% endblock %}
+
+{% block content %}
+
+<h1>Sermons page</h1>
+
+<form class="d-flex mt-3" role="search" method="POST" action="{% url 'search-sermons' %}">
+    {% csrf_token %}
+
+    <input class="form-control me-2" type="search" placeholder="Search Preachers" aria-label="Search" name="searched">
+
+    <button class="btn btn-secondary" type="submit">Search</button>
+  </form>
+
+
+<br><br>
+<div class="table-responsive">
+
+  <table class="table table-striped table-hover table-bordered">
+
+    {% for sermon in sermon_page %}
+      
+         <tr data-href="{% url 'sermon' sermon.id %}" id="sermonListTable">
+            <td>
+              {{ sermon }} - {{ sermon.date }} {{ sermon.time }}
+            </td>
+         </tr>
+      
+    {% endfor %}
+
+  </table>
+</div>
+
+<!-- Pagination -->
+<br>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+   
+    {% if sermon_page.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ sermon_page.previous_page_number }}">Previous</a></li>
+
+    {% endif %}
+
+<!--    <li class="page-item disabled"><a class="page-link" href="#">Page {{ sermon_page.number }} of {{ sermon_page.paginator.num_pages }}</a></li> -->
+    {% for i in nums %}
+    <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+    {% endfor %}
+<!-- look in to how to do elipses -->
+    {% if sermon_page.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ sermon_page.next_page_number }}">Next</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ sermon_page.paginator.num_pages }}">Last &raquo;</a></li>
+
+    {% endif %}
+
+  </ul>
+</nav>
+
+
+
+
+{% endblock %}

@@ -1,10 +1,18 @@
+body {
+    background-color: #f4f4f4;
+}
+
+#manager {
+    color: rgb(248, 156, 153);
+}
+
 #churchDiv{
     height: auto;
     width: auto;
 }
 
 #church{
-    height: 100%;
+
     width: 100%;
 }
 
@@ -15,5 +23,65 @@
 
 #maps{
     height: auto;
-    width: 100%;
+    max-width: 100%;
+}
+
+/* Contact Page */
+
+#contact{
+    border: 0px solid;
+}
+
+#contactInfo{
+    margin-top: 50%;
+    text-indent: 10%;
+    transform: translateY(-80%);
+}
+
+/* Calendar Page */
+
+#events{
+    list-style-type: none;
+}
+
+.row{
+    position: relative;
+}
+
+#eventName{
+
+    transform: translateY(10%)
+}
+
+#updateEvent{
+    float: right;
+}
+
+#updater{
+    text-align: right;
+}
+
+/* Add_Event Page */
+#addEvent{
+    text-align: center;
+}
+
+
+
+/* DustinWebs Business Footer */
+
+#dustinwebsFooter{
+    text-align: center;
+}
+
+#dustinwebsContactLink{
+    color: blueviolet;
+}
+
+#dustinwebsLogoLink {
+    text-decoration: none;
+}
+
+.dustinwebsFooterLogo{
+    width: 10%;
 }

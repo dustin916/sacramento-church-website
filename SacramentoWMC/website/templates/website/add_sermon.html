@@ -1,0 +1,42 @@
+{% extends 'website/base.html' %} 
+{% load static %}
+
+{% block title %}Add Sermon{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+    <h1 id="addEvent">Add Sermon</h1>
+    <br><br>
+    {% if submitted %}
+        Your Sermon Audio Was Submitted Successfully!!!
+        <br>
+        <a href="/sermons/">Sermons</a>
+        
+    {% else %}
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            {{ form.media }}
+            {{ form.as_p }}
+            
+
+
+
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+    {% endif %}
+
+{% else %}
+    <h1>Sorry, only those who are authorized can add sermons. 
+        <br><br> 
+        If you are authorized and seeing this message, maybe you need to login.</h1>
+    <a href="{% url 'login' %}">Login Here</a>
+
+{% endif %}
+
+
+
+
+{% endblock %}

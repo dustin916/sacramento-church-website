@@ -1,0 +1,30 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Sermons{% endblock %}
+
+{% block content %}
+
+{% if searched %}
+
+    <center><h1>You Searched For {{ searched }} </h1></center>
+
+<div class="table-responsive">
+
+    <table class="table table-striped table-hover table-bordered">
+        {% for sermon in sermons %}
+        <tr data-href="{% url 'sermon' sermon.id %}" id="sermonListTable">
+            <td>
+            {{ sermon }} - {{ sermon.date }}
+            </td>
+        </tr> <br> <!-- whatever you want to show up - information wise - on the search result, you can put -  sermon . (model trait) -->
+        {% endfor %}
+    </table>
+</div>
+
+{% else %}
+    <h1>Don't forget to type something in the search bar. Click <a href="/sermons/">here</a> to go back. </h1>
+{% endif %}
+
+
+{% endblock %}
