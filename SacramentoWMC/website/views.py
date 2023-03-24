@@ -4,18 +4,19 @@ from django.http import HttpResponseRedirect # HttpResponseRedirect redirect bac
 from django.core.mail import send_mail
 from django.contrib import messages
 
+
+
 # other imports
-from calendar import HTMLCalendar, month_name
-from datetime import datetime
+
 
 # Import Pagination Stuff
 from django.core.paginator import Paginator, EmptyPage
 
-import calendar
+
 import os
 # local imports
-from .models import Sermon, Event
-from .forms import EventForm, SermonForm
+from .models import Sermon
+from .forms import SermonForm
 
 
 # Create your views here.
@@ -27,6 +28,19 @@ def home(request):
         "my_stuff": namer,
         })
 
+#About Us
+
+def about(request): 
+    title = "Who We Are"
+    return render(request, 'website/about.html', {
+        "title": title
+    })
+    
+def faith(request): # Articles of Faith
+    title = "Articles of Faith"
+    return render(request, 'website/faith.html', {
+        "title": title
+    })
 # Sermons
 
 def sermon_list(request):
@@ -107,103 +121,6 @@ def search_sermons(request):
         return render(request, 'website/search_sermons.html', {
             
         })
-
-# Events
-
-def calndr(request, year=datetime.now().year, month=datetime.now().strftime('%B'), day=datetime.now().day): # %B = month 
-    month = month.capitalize()
-    # Convert month from name to number
-    month_number = list(calendar.month_name).index(month)
-    month_number = int(month_number)
-
-    # create a calendar
-    cal = HTMLCalendar().formatmonth(year, month_number)
-
-    # get current year
-    now = datetime.now()
-    current_year = now.year
-
-    # Get current Day
-    current_day = now.day
-
-    #get current time
-    time = now.strftime('%I:%M %p') # %I = standard time, %H = military time... %p = am/pm,
-
-    # Events (Database)
-    
-
-    # Query Events Model for Dates
-    event_list = Event.objects.filter(
-        event_date__year = year,
-        event_date__month = month_number,
-    )
-
-
-    
-    return render(request, 'website/cal.html', {
-        'year': year,
-        'month': month,
-        'month_number': month_number,
-        'cal': cal,
-        'current_year': current_year,
-        'current_day': current_day,
-        'time': time,
-        'event_list': event_list,
-    })
-
-def event_list(request):
-
-    # Set up Pagination
-    p = Paginator(Event.objects.all().order_by('-event_date'), 10)
-    page = request.GET.get('page')  
-    event_page = p.get_page(page)
-    nums = "a" * event_page.paginator.num_pages
-
-
-    return render(request, 'website/event_list.html', {
-        'event_page': event_page,
-        'nums': nums,
-
-    })
-
-def add_event(request):
-    submitted = False
-    if request.method == 'POST':
-        form = EventForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/add-event?submitted=True')
-    else:
-        form = EventForm
-        if 'submitted' in request.GET:
-            submitted = True
-    return render(request, 'website/add_event.html', {
-        'form': form,
-        'submitted': submitted
-    })
-
-def update_event(request, event_id):
-    event = Event.objects.get(pk=event_id)
-    form = EventForm(request.POST or None, instance=event)
-    if form.is_valid():
-        form.save()
-        return redirect('calendar')
-
-    return render(request, 'website/update_event.html', {
-        'event': event,
-        'form': form,
-
-    })
-
-def delete_event(request, event_id):
-    event = Event.objects.get(pk=event_id)
-    if request.user.is_authenticated:
-        event.delete()
-        messages.success(request, ('Event has been deleted.'))
-        return redirect('calendar')
-    else:
-        messages.success(request, ('You are not authorized to access this page.'))
-        return redirect('calendar')
 
 # Contact
 

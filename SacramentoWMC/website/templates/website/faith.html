@@ -1,0 +1,144 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+
+<h1>{{title}}</h1>
+
+<div id="faith">
+    <div class="row">
+        
+            <div class="col-md-3 faithContent" id="faithContents">
+                
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th> Contents </th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody id="faithTableBody">
+
+                    </tbody>
+                </table>
+                  
+
+
+            </div>
+        
+
+        <div class="col-md-6">
+        
+<center>
+    <h3 class="faithTitle" id="section-0"><strong>Trinity</strong></h3>
+    <p class="faith">We believe there is one living and true God. In unity of this Godhead there are three distinct persons of one substance - the Father, the Son (the Word), and the Holy Ghost.</p>
+    <sub class="bible"><strong>Gen. 1:1; 17:1; Exod. 3:13–15; 33:20; Deut. 6:4; Ps. 90:2; 104:24; Isa. 9:6; Jer. 10:10; John
+        1:1, 2; 4:24; 5:18; 10:30; 16:13; 17:3; Acts 5:3, 4; Rom. 16:27; 1 Cor. 8:4, 6; 2 Cor. 13:14; Eph.
+        2:18; Phil. 2:6; Col. 1:16; 1 Tim. 1:17; Rev. 19:13.</strong></sub>
+
+<br><br>
+
+    <h3 class="faithTitle" id="section-1"><strong>The Son of God</strong></h3>
+    <p class="faith">We believe the only begotten Son of God was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, dead and buried - to be a sacrifice, not only for original guilt, but also for the actual sins of men, and to reconcile us to God.</p>
+    <sub class="bible"><strong>Mark 15; Luke 1:27, 31, 35; John 1:14, 18; 3:16, 17; Acts 4:12; Rom. 5:10, 18; 1 Cor. 15:3; 2
+        Cor. 5:18, 19; Gal. 1:4; 2:20; 4:4, 5; Eph. 5:2; 1 Tim. 1:15; Heb. 2:17; 7:27; 9:28; 10:12; 1 Pet.
+        2:24; 1 John 2:2; 4:14</strong></sub>
+
+<br><br>
+
+<h3 class="faithTitle" id="section-2"><strong>The Resurrection of Christ</strong></h3>
+<p class="faith">We believe Jesus Christ, after being crucified, rose from the grave on the third day, is not sitting at the right hand of God the Father. We believe this to be a bodily resurrection.</p>
+<sub class="bible"><strong>Ps. 16:8–10; Matt. 27:62–66; 28:5–9, 16, 17; Mark 16:6, 7, 12; Luke 24:4–8, 23; John
+    20:26–29; 21:1–25; Acts 1:2; 2:24–31; 10:40; Rom. 8:34; 14:9, 10; 1 Cor. 15:6, 14; Heb.
+    13:20.</strong></sub>
+
+<br><br>
+
+<h3 class="faithTitle" id="section-3"><strong>The Holy Ghost</strong></h3>
+<p class="faith">We believe in the Holy Ghost - proceeding from the Father and the Son is one substance, majesty, and glory with the Father and the Son, very and eternal God.</p>
+<sub class="bible"><strong>Job 33:4; Matt. 28:19; John 4:24; Acts 5:3, 4; Rom. 8:9; 2 Cor. 3:17; Gal. 4:6</strong></sub>
+
+<br><br>
+
+<h3 class="faithTitle" id="section-4"><strong>The Holy Scriptures</strong></h3>
+<p class="faith">We believe the Holy Scriptures contain all things necessary to salvation; so that whatsoever is not read therin, nor may be proved thereby, is not to be required of any person in order to be saved. We believe the Scriptures to be fully inerrant in their original manuscript and superior to all human authority.</p>
+<p class="faith">The canonical books of the Old Testament are:</p>
+    <p class="faith">Genesis, Exodus, Leviticus, Numbers, Deuteronomy, Joshua, Judges,
+    Ruth, 1 Samuel, 2 Samuel, 1 Kings, 2 Kings, 1 Chronicles, 2 Chronicles,
+    Ezra, Nehemiah, Esther, Job, Psalms, Proverbs, Ecclesiastes, The Song
+    of Solomon, Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel, Hosea,
+    Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah,
+    Haggai, Zechariah, and Malachi.</p>
+    <p class="faith">The canonical books of the New Testament are:</p>
+    <p class="faith">Matthew, Mark, Luke, John, The Acts, The Epistle to the Romans,
+    1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians,
+    Colossians, 1 Thessalonians, 2 Thessalonians, 1 Timothy, 2 Timothy,
+    Titus, Philemon, Hebrews, James, 1 Peter, 2 Peter, 1 John, 2 John, 3
+    John, Jude, and Revelation</p>
+<sub class="bible"><strong>Ps. 19:7; Luke 24:27; John 17:17; Acts 17:2, 11; Rom. 1:2; 15:4; 16:26; Gal. 1:8; 1 Thes. 2:13;
+    2 Tim. 3:15–17; Heb. 4:12; Jas. 1:21; 1 Pet. 1:23; 2 Pet. 1:19–21; Rev. 22:14, 19.</strong></sub>
+
+<br><br>
+
+<h3 class="faithTitle" id="section-5"><strong>Love</strong></h3>
+<p class="faith">We believe the two great commandments which require us to love the Lord
+    our God with all the heart, and our neighbors as ourselves, contain the
+    sum of the divine law as it is revealed in the Scriptures: they are the
+    measure and perfect rule of human duty, as well as the ordering and
+    directing of families and nations, and all other social bodies, as for individual acts, by which we are required to acknowledge God as our only
+    Supreme Ruler, and all men as created by Him, equal in all natural rights.
+    Wherefore all men are bound so to order all their individual, social, and
+    political acts as to render to God entire and absolute obedience, and to
+    secure to all men the enjoyment of every natural right, as well as to
+    promote the greatest happiness of each in the possession and exercise of
+    such rights.</p>
+<sub class="bible"><strong>Lev. 19:18, 34; Deut. 1:15–17; 2 Sam. 23:3; Job 29:16; 31:13, 14; Jer. 21:12; 22:3; Matt. 5:44–
+    47; 7:12; Luke 6:27–29, 35; John 13:34, 35; Acts 10:34, 35; 17:26; Rom. 12:9; 13:1, 7, 8, 10;
+    Gal. 5:14; 6:10; Tit. 3:1; Jas. 2:8; 1 Pet. 2:17; 1 John 2:5; 4:12, 13; 2 John 6</strong></sub>
+
+<br><br>
+
+<h3 class="faithTitle" id="section-6"><strong>Sin</strong></h3>
+<p class="faith">We believe that, whatever someone does with the doctrine of sin will determine the rest of one's belief system. That said, we believe that there are three aspects of sin:</p>
+<p class="faith"><strong>Actions:</strong> We believe sin to be a willful transgression of a known law of God. One needs to know something is a sin, and choose they are still going through with it. These are the actions of sin: the things we do that we are to repent of. More on this later.</p>
+<sub class="bible"><strong>Look for Scripture for these.</strong></sub>
+<br><br>
+<p class="faith"><strong>Nature:</strong> We believe in a nature of sin which we are born with. This we have inherited from the fall of Adam and Eve.</p>
+<sub class="bible"><strong>Look for Scripture for these.</strong></sub>
+<br><br>
+<p class="faith"><strong>Effects:</strong> We believe the effects of sin will be around until we die and go to Heaven, or until Jesus returns. Jesus prayed that the Father would not take us out of the world, but would keep us from the evil of it. Examples of some of the effects include, but are not limited to, sickness, sorrow, pain, and death.</p>
+<sub class="bible"><strong>Look for Scripture for these.</strong></sub>
+
+<br><br>
+
+<h3 class="faithTitle" id="section-7"><strong>Deliverance From Sin</strong></h3>
+<p class="faith">While we believe that there are three aspects of sin, we also believe that God has cures for each. It is not that God cannot take care of them all at once, but that each aspect of sin is a separate disease.</p>
+<p class="faith"><strong>Actions:</strong> Salvation - becomes a Christian</p>
+<sub class="bible"><strong>Look for Scripture for these.</strong></sub>
+<br><br>
+<p class="faith"><strong>Nature:</strong> Sanctification - not that we are perfect humans, but</p>
+<sub class="bible"><strong>Look for Scripture for these.</strong></sub>
+<br><br>
+<p class="faith"><strong>Effects:</strong> As mentioned above, this will be around until we die and go to Heaven, or until Jesus returns. This we call Glorification. We receive a glorified body.</p>
+<sub class="bible"><strong>Look for Scripture for these.</strong></sub>
+
+<br><br>
+
+<h3 class="faithTitle" id="section-8"><strong>Creation</strong></h3>
+<p class="faith">We believe God created everything as recorded in Genesis. We believe that God created everything in six literal days, and rested on the seventh day. ...</p>
+<sub class="bible"><strong>Look for Scripture for these.</strong></sub>
+
+<br><br>
+
+  
+   
+
+
+
+
+
+
+{% endblock %}

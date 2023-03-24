@@ -2,12 +2,13 @@ body {
     background-color: #f4f4f4;
 }
 
+
 #manager {
     color: rgb(248, 156, 153);
 }
 
 #churchDiv{
-    height: auto;
+    
     width: auto;
 }
 
@@ -21,9 +22,56 @@ body {
     width: auto;
 }
 
+/* home */
+
+.pastor{
+    max-width: 100%;
+}
+
+#pastor{
+    max-width: 100%;
+}
+
+
 #maps{
     height: auto;
-    max-width: 100%;
+    max-width: auto;
+}
+
+/* About */
+
+
+#faithContents {
+    border: 1px solid;
+    margin-bottom: auto;
+    position: sticky;
+}
+
+.faithTitle{
+    font-family: 'Calisto MT';
+    font-size: 32px;
+}
+
+#faithTableBody{
+    cursor: pointer;
+}
+
+.faith{
+    font-family: 'Calisto MT';
+    font-size: 22px;
+}
+
+.bible{
+    font-family: Calibri;
+    font-size: 12px;
+}
+
+#faith {
+    border: 0px solid;
+}
+
+#pastorFamily{
+    width: auto;
 }
 
 /* Contact Page */
@@ -37,35 +85,6 @@ body {
     text-indent: 10%;
     transform: translateY(-80%);
 }
-
-/* Calendar Page */
-
-#events{
-    list-style-type: none;
-}
-
-.row{
-    position: relative;
-}
-
-#eventName{
-
-    transform: translateY(10%)
-}
-
-#updateEvent{
-    float: right;
-}
-
-#updater{
-    text-align: right;
-}
-
-/* Add_Event Page */
-#addEvent{
-    text-align: center;
-}
-
 
 
 /* DustinWebs Business Footer */
@@ -85,3 +104,4 @@ body {
 .dustinwebsFooterLogo{
     width: 10%;
 }
+

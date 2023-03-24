@@ -1,0 +1,67 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+
+<h1>{{title}}</h1>
+
+<div class="aboutUs">
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <div class="pastorFamily">
+                
+                <figure>
+                    <center>
+                        <img src="{% static 'images/olivers_500.jpg' %}" id="pastorFamily">
+                        <figcaption>
+                            Rev. Dustin, Rachel, and Rhoda Oliver
+                        </figcaption>
+                    </center>
+                </figure>
+            </div>
+        </div>
+    
+    <div class="col-sm-6">
+        <p>Hello, thank you for stopping by!</p>
+        <p>We are not only a church, but a family.</p>
+        <p>We endeavor to live by the Bible.</p>
+        <p>As a church, we endeavor to share and live the Word of God in our every day lives while maintaining a family atmosphere. We believe, as part of the body of Christ, that we need to help one another and bear one another's burdens.</p>
+        <p>We invite you to check out our <a href="{% url 'faith' %}">Articles of Religion</a> to find out what we believe. If you have any questions, please, feel free to <a href="{% url 'contact' %}">contact</a> us.</p>
+        
+        <br><br><br>
+        <p>We are part of the Allegheny Wesleyan Methodist Connection.</p>
+    </div>
+   </div>     
+
+   <hr>
+
+   <h3>Allegheny Wesleyan Methodist Connection (Original Allegheny Conference)</h3>
+
+   
+   <div class="row" id="aboutConnection">
+
+        <div class="connectionLogo">
+            <figure>
+                <img src="{% static 'images/connection_logo_200.jpg' %}" id="pastorFamily">
+            </figure>
+        </div>
+
+        <div class="connection">
+
+        </div>
+
+   </div>
+        
+   
+
+</div>
+
+
+
+
+{% endblock %}

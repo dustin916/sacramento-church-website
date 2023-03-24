@@ -29,19 +29,21 @@ def logout_manager(request):
     messages.success(request, ('You have been logged out sucessfully.'))
     return redirect('home')
 
-def register_manager(request):
-    if request.method == 'POST':
-        form = RegisterManagerForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-            manager = authenticate(username=username, password=password)
-            login(request, manager)
-            messages.success(request, ('You have been sucessfully registered as a manager of the {} website.').format(church))
-            return redirect('home')
-    else:   
-        form = RegisterManagerForm()
-    return render(request, 'authenticate/register_manager.html', {
-        'form': form,
-    })
+### This can be used if the client wants it. Otherwise I will add people manually. 
+
+#def register_manager(request):
+#    if request.method == 'POST':
+#        form = RegisterManagerForm(request.POST)
+#        if form.is_valid():
+#            form.save()
+#            username = form.cleaned_data['username']
+#            password = form.cleaned_data['password1']
+#            manager = authenticate(username=username, password=password)
+#            login(request, manager)
+#            messages.success(request, ('You have been sucessfully registered as a manager of the {} website.').format(church))
+#            return redirect('home')
+#    else:   
+#        form = RegisterManagerForm()
+#    return render(request, 'authenticate/register_manager.html', {
+#        'form': form,
+#    })
