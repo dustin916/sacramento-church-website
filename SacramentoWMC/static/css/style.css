@@ -40,6 +40,9 @@ body {
 
 /* About */
 
+#welcome {
+    padding-top: 6%;
+}
 
 #faithContents {
     border: 1px solid;
@@ -71,7 +74,7 @@ body {
 }
 
 #pastorFamily{
-    width: auto;
+    max-width: 100%;
 }
 
 /* Contact Page */
