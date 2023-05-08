@@ -25,10 +25,8 @@
     
     <header>
       
+      
         {% include 'website/navbar.html' %}
-        <div id="churchDiv">
-          <img src="{% static 'images/church_wide.jpeg' %}" id="church">
-        </div>
       
     </header>
     <br>
@@ -51,10 +49,10 @@
     {% endblock %}
 </div>
 
-
-    <center>{% include 'website/footer.html' %}</center>
-    <center>{% include 'website/dustinwebs_footer.html' %}</center>
-
+  <div class="container-sm" id="footerGroup">
+    <center id="footer">{% include 'website/footer.html' %}</center>
+   
+  </div>
     
 
     <!-- Bootstrap JS -->
@@ -76,6 +74,9 @@
         })
       });
     </script>
+    {% block scriptPageSpecific %}
+
+    {% endblock %}
 
     
 

@@ -2,15 +2,16 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Navbar Stuff */
+
+#shortName{
+    display: none;
+}
 
 #manager {
     color: rgb(248, 156, 153);
 }
 
-#churchDiv{
-    
-    width: auto;
-}
 
 #church{
 
@@ -18,6 +19,7 @@ body {
 }
 
 #churchDiv{
+    margin-top: -10;
     height: auto;
     width: auto;
 }
@@ -32,6 +34,9 @@ body {
     max-width: 100%;
 }
 
+#pastorName{
+    font-size: 20px;
+}
 
 #maps{
     height: auto;
@@ -44,10 +49,44 @@ body {
     padding-top: 6%;
 }
 
+
+
+#faith {
+    position: relative;
+    
+  }
+
 #faithContents {
-    border: 1px solid;
-    margin-bottom: auto;
     position: sticky;
+    top: 5%;
+    bottom: 0;
+    height: calc(100vh - 100%); /* Adjust the height to account for your header and footer */
+    overflow-y: auto;
+}
+
+
+
+.backToTopBtn {
+    display: none; /* Hide the button by default */
+   
+}
+
+.backToTopBtn.active {
+    display: block;
+    cursor: pointer;
+}
+
+.backToTopBtn a {
+    color: black;
+    text-decoration: none;
+}
+
+#faithTable {
+    border: 1px solid black;
+}
+
+#faithBody {
+    margin-left: 14%;
 }
 
 .faithTitle{
@@ -57,6 +96,7 @@ body {
 
 #faithTableBody{
     cursor: pointer;
+    
 }
 
 .faith{
@@ -84,16 +124,18 @@ body {
 }
 
 #contactInfo{
-    margin-top: 50%;
-    text-indent: 10%;
-    transform: translateY(-80%);
+
 }
 
 
 /* DustinWebs Business Footer */
 
 #dustinwebsFooter{
-    text-align: center;
+    text-align: right;
+    padding-top: 1%;
+    padding-right: 2%;
+    border: 2px solid lightgray;
+
 }
 
 #dustinwebsContactLink{
@@ -108,3 +150,73 @@ body {
     width: 10%;
 }
 
+.test {
+    color: #f4f4f4;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Media Queries */
+
+
+/* Navbar */
+
+@media (max-width: 385px) {
+    #shortName{
+        display: block;
+    }
+    #longName{
+        display: none;
+    }
+    
+}
+
+
+/* Articles of Faith */
+
+@media (max-width: 767px) {
+    #faithContents {
+      display: none;
+    }
+
+    #faithBody {
+        
+        width: 100%;
+        margin-left: 0%;
+    }
+  }
+
+
+/* Contact */
+
+@media (min-width: 1200px){
+    #contactInfo{
+        margin-top: 50%;
+        text-indent: 10%;
+        transform: translateY(-80%);
+    }
+
+}
+
+@media (max-width: 575px){
+    #contactInfo{
+        margin-bottom: 9%;
+    }
+
+}
+
+@media (max-width: 329px){
+    #contactInfo{
+        margin-bottom: 12%;
+    }
+
+}
+
+
+/* Footer */
+  
+@media (max-width: 400px) {
+    .dustinwebsFooterLogo{
+        width: 12%;
+    }
+}

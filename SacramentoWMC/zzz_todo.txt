@@ -1,5 +1,6 @@
-For Add Event - make description a rich text editor
 
-Make HTMLCalendar look better
 
-Add Home Page information/logo/picture of pastor & family
+
+Show church
+
+Publish
