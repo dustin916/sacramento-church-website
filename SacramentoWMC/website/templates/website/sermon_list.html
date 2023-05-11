@@ -1,11 +1,10 @@
 {% extends 'website/base.html' %}
 {% load static %}
 
-{% block title %}Sermons{% endblock %}
 
 {% block content %}
 
-<h1>Sermons page</h1>
+<h1 class="title">Sermons</h1>
 
 <form class="d-flex mt-3" role="search" method="POST" action="{% url 'search-sermons' %}">
     {% csrf_token %}

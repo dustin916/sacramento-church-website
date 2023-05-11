@@ -1,11 +1,10 @@
 {% extends 'website/base.html' %}
 {% load static %}
 
-{% block title %}Sermons{% endblock %}
 
 {% block content %}
 
-<h1>{{ sermon }}</h1>
+<h1 class="title">{{ sermon }}</h1>
 
 
 {% if sermon.audio_file %}

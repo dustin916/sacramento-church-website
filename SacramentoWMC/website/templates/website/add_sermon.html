@@ -1,18 +1,19 @@
 {% extends 'website/base.html' %} 
 {% load static %}
 
-{% block title %}Add Sermon{% endblock %}
 
 {% block content %}
 
 {% if user.is_authenticated %}
 
-    <h1 id="addEvent">Add Sermon</h1>
+    <h1 class="title" id="addEvent">Add Sermon</h1>
     <br><br>
     {% if submitted %}
         Your Sermon Audio Was Submitted Successfully!!!
-        <br>
-        <a href="/sermons/">Sermons</a>
+        <br><br>
+        If you would like to add more sermons, please click <a href="{% url 'add-sermon' %}">here.</a>
+        <br><br>
+        To see the sermons you have, click this link: <a href="{% url 'sermon-list' %}">Sermons</a>
         
     {% else %}
         <form action="" method="POST" enctype="multipart/form-data">

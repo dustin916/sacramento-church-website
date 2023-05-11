@@ -1,5 +1,0 @@
-Django Admin login
-
-U/N: DustinWebs
-email: dustins.webs@gmail.com
-PW: S@cWMC916
