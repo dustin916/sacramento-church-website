@@ -4,6 +4,7 @@ html{
 
 body {
     background-color: #f4f4f4;
+    font-size: 20px;
 
     min-height: 100%;
     
@@ -49,6 +50,10 @@ body {
 }
 
 #pastorName{
+    font-size: 20px;
+}
+
+#serviceTimes {
     font-size: 20px;
 }
 
@@ -138,13 +143,6 @@ body {
 
 /* Contact Page */
 
-#contact{
-    border: 0px solid;
-}
-
-#contactInfo{
-
-}
 
 
 /* DustinWebs Business Footer */
@@ -212,11 +210,20 @@ footer{
 
 /* Contact */
 
-@media (min-width: 1200px){
+
+@media (min-width: 1200px) and (max-width: 1399px){
     #contactInfo{
         margin-top: 50%;
         text-indent: 10%;
         transform: translateY(-80%);
+    }
+
+}
+
+@media (min-width: 1400px){
+    #contactInfo{
+        margin-top: 6%;
+        text-indent: 10%;
     }
 
 }
