@@ -34,9 +34,10 @@
                     <p>+1 916-872-3464</p>
 
                     <h5>Email</h5>
-                    <p>sacramentowmc@gmail.com</p>
+                    <p>sacramentowmc@gmail.com</p><br>
                 </div>
             </div>
+            
             
         
         <!--Contact Form-->
@@ -45,22 +46,20 @@
                 <div class="contact-form">
  
                     <!--Form-->
-                    <form action="{% url 'contact' %}" method="post">
+                    <form method="post">
                         {% csrf_token %}
-                            <input type="text" name="message-subject" class="form-control mb-30" placeholder="Subject">
-                                
-                            <br>
-                            <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name" required>
-                            
-                            <br>
-                            
-                            <input type="email" name="message-email" class="form-control mb-30" placeholder="Your Email" required>
-                            
-                            <br>
-                            
-                            <textarea name="message" class="form-control mb-30" placeholder="Your Message" required></textarea>
-                            <br>
-                            <button type="submit" class="btn btn-secondary">Send Message</button>
+                        
+                        {{ form.subject }}
+                        <br>
+                        {{ form.name }}
+                        <br>
+                        {{ form.email }}
+                        <br>
+                        {{ form.message }}
+                        <br>
+                        {{ form.captcha }}    
+                        <br>
+                        <button type="submit" class="btn btn-secondary">Send Message</button>
                             
                     </form>
                 </div>
@@ -78,5 +77,8 @@
 
 
 
+{% block scriptPageSpecific %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
 
 {% endblock %}

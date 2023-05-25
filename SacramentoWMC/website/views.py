@@ -8,7 +8,6 @@ from django.contrib import messages
 
 # other imports
 
-
 # Import Pagination Stuff
 from django.core.paginator import Paginator, EmptyPage
 
@@ -16,7 +15,7 @@ from django.core.paginator import Paginator, EmptyPage
 import os
 # local imports
 from .models import Sermon
-from .forms import SermonForm
+from .forms import SermonForm, ContactForm
 
 
 # Create your views here.
@@ -125,39 +124,55 @@ def search_sermons(request):
 # Contact
 
 def contact(request):
-    if request.method == "POST":
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            message_subject = form.cleaned_data['subject']
+            message_name = form.cleaned_data['name']
+            message_email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+    
+    
+            message_to_me = "Name: " + message_name + "\n" + "From: " + message_email + ": " + "\n" + "Message: " + "\n" + message
 
-        message_subject = request.POST['message-subject']
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
-        message = request.POST['message']
-        
-        message_to_me = "Name: " + message_name + "\n" + "From: " + message_email + ": " + "\n" + "Message: " + "\n" + message
+            response_email = "Thank you for contacting me. If you received this email that means we received your message. We will respond shortly."
+            
+            
+            # Send an email
+            send_mail(
+                '{}'.format(message_subject), # subject
+                message_to_me, # message
+                message_email, # from email (who is filling out the form)
+                ['sacramentowmc@gmail.com'], # To email (where is the form being sent to)
+            )
+            # Confirmation email
+            send_mail(
+                'Confirmation', # subject
+                response_email, # message
+                'sacramentowmc@gmail.com', 
+                [message_email], 
+            )
+            return render(request, 'website/contact.html', {
+                "message_name": message_name,
 
-        response_email = "Thank you for contacting me. If you received this email that means we received your message. We will respond shortly."
-        
-        
-        # Send an email
-        send_mail(
-            '{}'.format(message_subject), # subject
-            message_to_me, # message
-            message_email, # from email (who is filling out the form)
-            ['sacramentowmc@gmail.com'], # To email (where is the form being sent to)
-        )
-        # Confirmation email
-        send_mail(
-            'Confirmation', # subject
-            response_email, # message
-            'sacramentowmc@gmail.com', 
-            [message_email], 
-        )
-
-
-        return render(request, 'website/contact.html', {
-            'message_name': message_name,
+            })
+        else:
+            form = ContactForm(initial={
+                'subject': request.POST.get('subject', ''),
+                'name': request.POST.get('name', ''),
+                'email': request.POST.get('email', ''),
+                'message': request.POST.get('message', ''),
             })
 
-    else:
-        return render(request, 'website/contact.html', {
 
-        })
+            messages.success(request, ('Please verify that you are human by clicking the check box and try again.'))
+    else:
+        form = ContactForm()
+        
+    return render(request, 'website/contact.html', {
+        "form": form,
+
+    })
+
+    
+

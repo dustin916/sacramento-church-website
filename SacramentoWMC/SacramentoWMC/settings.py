@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-d)afwybx$!z42a@q2!(82@3@%xr&u%g38j#v8$9gvl*s(qaoy("
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "website.apps.WebsiteConfig",
     "managers.apps.ManagersConfig",
+    "captcha",
 ]
 
 MIDDLEWARE = [
@@ -138,3 +140,6 @@ EMAIL_HOST_USER = 'sacramentowmc@gmail.com'
 EMAIL_HOST_PASSWORD = 'dyle qlqq jydv krnf'
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = False
+
+RECAPTCHA_PUBLIC_KEY = '6Ldtuz0mAAAAABhn9RElj51ar-X3Y99DQCCexqw_'
+RECAPTCHA_PRIVATE_KEY = '6Ldtuz0mAAAAAHxj7bFjkgOZuarmNyj5Z077GbAY'

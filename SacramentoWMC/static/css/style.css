@@ -143,7 +143,15 @@ body {
 
 /* Contact Page */
 
+.contact-form{
+    border: 0px solid red;
+    margin-top: -8%;
+}
 
+.g-recaptcha {
+    transform:scale(1.0);
+    transform-origin:0 0;
+}
 
 /* DustinWebs Business Footer */
 
@@ -209,6 +217,24 @@ footer{
 
 
 /* Contact */
+
+
+@media (min-width: 576px) and (max-width: 768px){
+    .contact{
+
+        margin-top: -5%;
+        margin-left: -5%
+    }    
+    .contact-form{
+        margin-left: 12%;        
+        
+        
+    }
+    #contactInfo{
+        margin-right: 10%;
+    }
+
+}
 
 
 @media (min-width: 1200px) and (max-width: 1399px){
