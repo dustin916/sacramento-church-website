@@ -156,16 +156,7 @@ def contact(request):
                 "message_name": message_name,
 
             })
-        else:
-            form = ContactForm(initial={
-                'subject': request.POST.get('subject', ''),
-                'name': request.POST.get('name', ''),
-                'email': request.POST.get('email', ''),
-                'message': request.POST.get('message', ''),
-            })
 
-
-            messages.success(request, ('Please verify that you are human by clicking the check box and try again.'))
     else:
         form = ContactForm()
         
