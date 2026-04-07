@@ -1,7 +1,15 @@
-# Sacramento_Church_Website
- Church Website
- A Church website I built for the church I pastored at the time.
- Tools used were Django, Python, HTML, CSS and some JavaScript
+# Sacramento Church Website
 
+A production Django website built for a church organization.
 
- Church decided to close website in June of 2024. 
+## Features
+- Dynamic content pages
+- Admin panel for content management
+- Responsive layout
+
+## Highlights
+- Built for a real client
+- Successfully deployed and used in production
+
+## Status
+Project completed; organization has since closed.
