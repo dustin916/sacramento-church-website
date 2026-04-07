@@ -12,4 +12,4 @@ A production Django website built for a church organization.
 - Successfully deployed and used in production
 
 ## Status
-Project completed; organization has since closed.
+Project completed; organization decided to close the website.
