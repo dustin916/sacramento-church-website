@@ -12,4 +12,10 @@ A production Django website built for a church organization.
 - Successfully deployed and used in production
 
 ## Status
-Project completed; organization decided to close the website.
+ - Project completed; organization decided to close the website due to no fault of the website.
+
+https://github.com/user-attachments/assets/db833c98-61d3-41a9-a180-e82468d112a0
+
+
+
+
